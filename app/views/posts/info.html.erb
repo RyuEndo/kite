@@ -1,0 +1,5 @@
+<% @res.each do |res| %>
+
+  <p><%=res.user.name%>が反応しました
+<%=link_to"この人の詳細を見る","/user/#{res.user.id}"%>
+<% end %>

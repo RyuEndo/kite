@@ -42,7 +42,20 @@ class PostsController < ApplicationController
   end
   
   def resp
-   @resp= Response.new(resp_params)
+   @post=Post.find_by(id: params[:id])
+   @resp= Response.new(store_id: @post.store_id ,user_id: current_user.id, post_id: @post.id)
+   
+   if @resp.save
+      flash[:success] = "この募集に応募しました"
+      redirect_to "/"
+   else
+      render 'show'
+   end
+  end
+  
+  def info
+    @res=Response.where(store_id: current_store.id)
+    
   end
 
   private

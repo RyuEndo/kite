@@ -5,4 +5,5 @@ class Store < ApplicationRecord
          :recoverable, :rememberable, :validatable
          validates :tel, :name,:address , presence: true
   has_many :posts
+  has_many :responses
 end

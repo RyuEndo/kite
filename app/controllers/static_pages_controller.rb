@@ -6,7 +6,11 @@ class StaticPagesController < ApplicationController
     @store=current_store
     @current_post=Post.where(store_id: current_store.id)
     end
-    @post = Post.all
+
+    scope = Post
+    scope = scope.where(date: params[:date]) if params[:date]
+    scope = scope.where(money: params[:money]) if params[:money]
+    @post = scope.order(updated_at: :desc)
   end
   
   def detail
