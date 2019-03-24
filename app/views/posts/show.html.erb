@@ -1,0 +1,14 @@
+<h1>募集の詳細</h1>
+
+  介護施設名
+  <p><%= @post.store.name %></p>
+  日時
+  <p><%= @post.date %></p>
+  給料
+  <p><%= @post.money %></p>
+  人数
+  <p><%= @post.people %></p>
+  コメント
+  <p><%= @post.content %></p>
+  
+  <%= link_to '応募する', "/posts/#{@post.id}/response" , method: :post%>

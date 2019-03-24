@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  date: 2019-03-23 17:47:17
+  money: 1
+  people: 1
+  store: one
+
+two:
+  content: MyText
+  date: 2019-03-23 17:47:17
+  money: 1
+  people: 1
+  store: two

@@ -1,0 +1,21 @@
+<h1>応募を編集する</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@post) do |f| %>
+
+      <%= f.label :date %>
+      <%= f.date_select :date, {}, class: 'form-control' %>
+　　　
+      <%= f.label :people %>
+      <%= f.text_field :people, class: 'form-control' %>
+
+      <%= f.label :money %>
+      <%= f.text_field :money, class: 'form-control' %>
+
+      <%= f.label :content %>
+      <%= f.text_field :content, class: 'form-control' %>
+
+      <%= f.submit "募集を編集する", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

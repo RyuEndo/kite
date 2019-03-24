@@ -1,7 +1,8 @@
-class User < ApplicationRecord
+class Store < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :name , presence: true
+         validates :tel, :name,:address , presence: true
+  has_many :posts
 end

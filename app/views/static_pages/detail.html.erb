@@ -1,0 +1,17 @@
+<% if store_signed_in? %>
+  名前<%= @store.name %>
+  <br>
+  住所<%= @store.address %>
+  <br>
+  電話番号<%= @store.tel %>
+  <br>
+  住所<%= @store.tel %>
+  <br>
+  メアド<%= @store.email %>
+  
+  <%= link_to '編集する', "/" %>
+<% elsif  user_signed_in?%>
+  名前<%= @user.name %>
+  <br>
+  メアド<%= @user.email %>
+ <%end%>

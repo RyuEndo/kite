@@ -1,0 +1,45 @@
+<% if store_signed_in? %>
+新規投稿フォーム
+<%= link_to '新規募集を作る', "/posts/new" %>
+<br>
+最近募集したもの一覧
+<% @current_post.each do |post| %>
+<br>---------------------------------<br>
+  介護施設名
+  <p><%= post.store.name %></p>
+  日時
+  <p><%= post.date %></p>
+  給料
+  <p><%= post.money %></p>
+  人数
+  <p><%= post.people %></p>
+  コメント
+  <p><%= post.content %></p>
+  <%=link_to"編集する","/posts/edit/#{post.id}"%>
+<% end %>
+<%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+<br><br><br>
+<% elsif  user_signed_in?%>
+募集一覧
+<% @post.each do |post| %>
+<br>---------------------------------<br>
+  介護施設名
+  <p><%= post.store.name %></p>
+  日時
+  <p><%= post.date %></p>
+  給料
+  <p><%= post.money %></p>
+  人数
+  <p><%= post.people %></p>
+  コメント
+  <p><%= post.content %></p>
+  <%=link_to"詳細を見る","/show/#{post.id}"%>
+<% end %>
+<br>
+<%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+<br><br><br>
+<%elsif%>
+<h1>一番最初のページ。新規登録</h1>
+<a href="/users/sign_in">美容師の方</a>
+<a href="/stores/sign_in">介護施設の方</a>
+ <%end%>
